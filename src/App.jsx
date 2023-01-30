@@ -1,26 +1,32 @@
 import React from 'react';
-import HelloWorld from './Components/HelloWorld';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
 import {
   BrowserRouter as Router,
   Routes,
   Route
 } from 'react-router-dom';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import Home from './Views/Home';
+import About from './Views/About';
 
 function App() {
   return (
     <div className="App">
       <Router>
+
         <Header />
 
-        <HelloWorld name="Jackson" />
-        <Routes>
-          <Route exact path="/"></Route>
-          <Route exact path="/about"></Route>
-        </Routes>
+        <div className="p-3">
+          <Routes>
+            <Route exact path="/" element={<Home />}></Route>
+            <Route exact path="/about" element={<About />}></Route>
+          </Routes>
+        </div>
+
+
 
         <Footer />
+
       </Router>
     </div>
   );

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useTransition, animated, useSpringRef } from '@react-spring/web';
-import { Link } from 'react-router-dom';
 import NavigationMenu from './NavigationMenu';
 
 function Navigation() {
@@ -50,28 +49,9 @@ function Navigation() {
         item ?
           <animated.div
             style={style}
-            className="fixed bg-white top-0 left-0 w-2/5 h-full z-50 shadow"
+            className="fixed bg-white top-0 left-0 w-1/5 h-full z-50 shadow"
           >
-            <ul>
-              <li>
-                <Link
-                  to="/"
-                  className="text-blue-500"
-                  onClick={handleMenu}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  className="text-blue-500"
-                  onClick={handleMenu}
-                >
-                  About
-                </Link>
-              </li>
-            </ul>
+            <NavigationMenu closeMenu={handleMenu}/>
           </animated.div>
           : ''
       ))}
