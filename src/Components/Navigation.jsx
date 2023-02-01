@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { useTransition, animated, useSpringRef } from '@react-spring/web';
+import { useTransition, animated } from '@react-spring/web';
 import NavigationMenu from './NavigationMenu';
 
 function Navigation() {
